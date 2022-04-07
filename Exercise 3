@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+class GFG {
+	public static void main (String[] args) {
+	    Scanner sc=new Scanner(System.in);
+		PriorityQueue<Integer> q = new PriorityQueue<Integer>();
+		int n=sc.nextInt();
+		int c=0;int sum=0;
+		for(int i=0;i<n;i++)
+		{
+		    q.add(sc.nextInt());
+		}
+		while(q.size()!=1)
+		{
+		    sum+=q.poll();
+		    sum+=q.poll();
+		    c+=sum;
+		    q.add(sum);
+		    sum=0;
+		}
+		System.out.println(c);
+	}
+}
